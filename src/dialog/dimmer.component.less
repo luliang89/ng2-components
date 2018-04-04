@@ -1,0 +1,32 @@
+@import '../base.less';
+
+:host{
+    .fade();
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    text-align: center;
+    z-index:1100;
+    display:table;
+    opacity:0;
+
+}
+
+:host.active{
+    opacity:1;
+}
+
+:host > div{
+    background: rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    display:table-cell;
+    vertical-align:middle;
+    padding:1rem;
+}
+
+:host.inverted > div{
+    background: rgba(255,255,255,0);
+}

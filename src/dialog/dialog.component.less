@@ -1,0 +1,82 @@
+
+@import '../base.less';
+
+@h:2.9rem;
+
+.iui-dialog{
+    background: #fff;
+    border-radius: @border_radius;
+    min-width: 20em;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    & .header{
+        font-size: 1.2rem;
+        font-weight: bold;   
+        height: @h;
+        min-height: @h;
+        line-height: @h;
+        border-bottom: 1px solid @border;
+    }
+
+    & .content{
+        padding:1.5em;
+        min-height: 4em;
+        flex-grow: 1;
+        height: 1005;
+        overflow: auto;
+        
+        & > .header{
+            margin-top: -1rem;
+            border-bottom: none;
+        }
+
+    }
+
+    & .footer{
+        display: flex;
+        border-top: 1px solid @border;
+        height: @h;
+        min-height: @h;
+
+        & > button{
+            height: 100%;
+            flex-grow: 1;
+            background: none;
+            border:0;
+            border-right: 1px solid @border;
+            margin: 0;
+            padding: 0;
+            outline: none;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+
+            &:last-child{
+                border-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+
+iui-dimmer.inverted .iui-dialog{
+    color: #fff;
+    background: rgba(0,0,0,.8);
+}
+
+.iui-dialog.loader{
+    display: inline-block;
+    min-width: 0;
+    padding:0.8em 2em;
+}
+
+.iui-dialog.nofity{
+    padding:1.5rem;
+    max-width: 40%;
+}

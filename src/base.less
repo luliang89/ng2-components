@@ -1,0 +1,17 @@
+@border: rgba(34,36,38,.15);
+@border_radius:0.25rem;
+@color:rgba(0,0,0,.87);
+@active_bg:rgba(0,0,0,.05);
+@disabled_color:rgba(40, 40, 40, 0.3);
+
+.translate3d(@x,@y,@z){
+    transform: translate3d(@x,@y,@z);
+}
+
+.transition(@property:transform,@duration:0.5s,@timing:ease){
+    transition: @property @duration @timing;
+}
+
+.fade(){
+    .transition(opacity);
+}

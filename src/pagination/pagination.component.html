@@ -1,0 +1,28 @@
+<div>
+
+  <a class="item" *ngIf="itemCount === 1" [class.disabled]='page === 1' (click)="setPage(page-1)">&lt;</a>
+
+  <ng-container *ngIf="itemCount > 1">
+
+    <a class="item" *ngIf="pages[0] !== 1" [class.active]="page === 1" (click)="setPage(1)">1</a>
+
+    <div class="item" *ngIf="pages[0] > 2">...</div>
+
+    <a class="item" *ngFor="let p of pages" [class.active]="page === p" (click)="setPage(p)">{{p}}</a>
+
+    <div class="item" *ngIf="pageCount - pages[pages.length - 1] > 2">...</div>
+
+    <a class="item" *ngIf="pages[pages.length - 1] !== pageCount" [class.active]="page === pageCount" (click)="setPage(pageCount)">{{pageCount}}</a>
+
+  </ng-container>
+
+  <a class="item active" *ngIf="itemCount === 1">{{page}}</a>
+
+  <a class="item" *ngIf="itemCount === 1" [class.disabled]='page === pageCount' (click)="setPage(page+1)">&gt;</a>
+
+</div>
+
+<div>
+  <ng-container>({{indexStart}}-{{indexEnd}}/{{total}})&nbsp;</ng-container>
+  每页显示：<a (click)="setPageSize(10)" [class.active]="size === 10">10</a>，<a (click)="setPageSize(20)" [class.active]="size === 20">20</a>，<a (click)="setPageSize(30)" [class.active]="size === 30">30</a>
+</div>

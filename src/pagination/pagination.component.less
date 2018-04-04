@@ -1,0 +1,56 @@
+@import '../base.less';
+
+:host > div{
+
+    &:first-child{
+        display: inline-flex;
+        background-color: #fff;
+        border: 1px solid  @border;
+        border-radius: @border_radius;
+        margin-bottom: 1rem;
+        
+        & > .item{
+            color: @color;
+            padding: 0.8rem 1rem;
+            min-width: 3rem;
+            text-align: center;
+            border-right:1px solid  @border;
+            vertical-align: middle;
+            user-select: none;
+        
+            &:last-child{
+                border-right: 0;
+            }
+
+            &.active{
+                background-color:@active_bg;
+            }
+
+            &.disabled{
+                cursor: default;
+                color: @disabled_color;
+                background-color: transparent;
+            }
+
+        }
+
+    }
+
+    &:last-child{
+        display: inline;
+        margin-left: 0.5rem;
+        white-space: nowrap;
+        color: grey;
+    }
+
+}
+
+a { 
+    cursor: pointer;
+
+    &.active{
+        cursor: default;
+        color: grey;
+        font-weight: bold;
+    }
+}

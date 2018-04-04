@@ -1,0 +1,25 @@
+<div class="ui attached segment title">
+    <i (click)="prevMonth()" class="left chevron icon"></i> {{month}} <i (click)="nextMonth()" class="right link chevron icon"></i>
+</div>
+<div class="ui bottom attached segment box">
+    <table class="calendar">
+        <thead>
+            <tr class="center aligned">
+                <th>周一</th>
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+                <th>周五</th>
+                <th>周六</th>
+                <th>周日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let week of weeks' class="center aligned">
+                <td *ngFor='let item of week; let index = index' (click)="clicks(item,weeks)" [ngClass]="item.on ? 'active' : ''">
+                    <div class="text-right">{{item.date}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
